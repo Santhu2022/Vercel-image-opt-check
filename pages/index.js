@@ -1,13 +1,24 @@
 import Image from 'next/image';
+import mountain from '../public/mountain.jpeg';
+
+const remoteImage = "https://weddingimage.betterhalf.ai//weddings/777c8603-b07d-4193-849b-06646df35e65/admin_uploads/46e5b266-b153-4f8b-ab4f-5d144d9165a9.jpg";
 
 const Home = () => {
   return (
-    <div className='h-96'>
-      <Image src={'https://weddingimage.betterhalf.ai//weddings/ff4d6eca-68f3-4ff5-a862-253745c06224/gmap/140d07ae-7096-4bcc-91ec-d3297fce5885.JPG'}
-        fill
-        className='object-contain'
-
+    <div>
+      <Image
+        src={mountain}
+        alt='mountain'
       />
+
+      <div className='relative h-[460px] w-full'>
+        <Image src={remoteImage}
+          fill
+          className='object-contain'
+          alt=''
+          sizes="(min-width: 768px) 100vw, 50vw"
+        />
+      </div>
     </div>
   );
 };
